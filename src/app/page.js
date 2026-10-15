@@ -10,19 +10,12 @@ import {
 import { 
   Plus, Users, MapPin, Calendar, Clock, DollarSign, Ghost, Search, 
   UserPlus, CheckCircle, CalendarPlus, Navigation, ExternalLink, 
-  LogOut, AlertTriangle, Ban, X, Edit, Trash2, Filter, Tag, Info, 
+  LogOut, AlertTriangle, X, Edit, Trash2, Tag, Info, 
   MessageCircle, Hourglass, ChevronLeft, ChevronRight, Grid,
-  Ticket, Gift, Timer, Globe, AlertCircle, Coffee, CalendarDays,
+  Ticket, Timer, Globe, AlertCircle, Coffee, CalendarDays,
   Download, Settings, User,
-  Sparkle,
   Sparkles
 } from 'lucide-react';
-
-    // 移除 INITIAL_EVENTS，因為現在使用 Firestore
-    const INITIAL_EVENTS = [];
-    // 這些常數可以保留
-const today = new Date();
-    // ...
 
 const INITIAL_PROMOTIONS = [
   {
@@ -984,12 +977,6 @@ export default function EscapeRoomApp() {
     // 如果是候補，不需要太嚴重的確認，但為了統一體驗也可以加
     // 這裡假設直接顯示確認視窗
     setConfirmModal({ show: true, eventId: id, action: 'join', title: targetEvent.title });
-  };
-
-  const handleJoin = async (id) => {
-    // 這個函式現在改為由 executeAction 呼叫，或者保留給內部邏輯
-    // 為了避免混淆，我們把邏輯移到 executeAction 或獨立出來
-    // 這裡保留空殼或移除，下面會重寫 executeAction
   };
 
   const promptCancel = (id) => setConfirmModal({ show: true, eventId: id, action: 'cancel' });
